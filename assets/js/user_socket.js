@@ -69,7 +69,8 @@ chatInput.addEventListener("keypress", event => {
 
 channel.on("new_msg", payload => {
   let messageItem = document.createElement("p")
-  messageItem.innerText = `[${Date()}] ${payload.body}`
+  time = new Date()
+  messageItem.innerText = `[${time.toLocaleString("en-GB")}]\n ${payload.body}`
   messagesContainer.appendChild(messageItem)
 })
 
